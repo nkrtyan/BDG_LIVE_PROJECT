@@ -1,2 +1,2 @@
 
-First Update
+print("First Update")
