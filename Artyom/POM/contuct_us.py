@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.keys import Keys
 
-class Contuc_us:
+class Contuct_us:
 
     #locators
     subject_heading   = (By.ID , "uniform-id_contact")
