@@ -64,7 +64,7 @@ def wait_for_element(self, browser, element):
 #6.wit_for_elements
 def wait_for_elements(self, browser, elements):
         try:
-            WebDriverWait(browser, 100).until(EC.visibility_of_all_elements_located(elements))
+            WebDriverWait(browser, 100).until(EC.visibility_of_any_elements_located(elements))
         except:
             print("Can't locate elements!")
 
