@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
     "python.linting.pylintEnabled": false,
+=======
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylamaEnabled": false,
+>>>>>>> a8701f35194bf168ed99855e4abcda98ec335a74
     "python.linting.enabled": true
 }
