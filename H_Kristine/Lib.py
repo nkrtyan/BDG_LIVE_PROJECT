@@ -38,6 +38,8 @@ class LIB:
             with open('config.json') as f:
                 data=json.load(f)
             browser.get(data['url'])
+        except:
+            print("There are some problems with page loading!")
 
     #open txt file with log name and write there given text
     def write_to_file(self, text):
@@ -86,7 +88,7 @@ class LIB:
     def save_screenshot(self, browser):
         current_filename=os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
+            browser.save_screenshot(f'Test\\{current_filename}_screenshot.png')
         except:
             print("Screenshot is not saved!")
 
