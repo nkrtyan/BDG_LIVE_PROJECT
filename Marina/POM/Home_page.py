@@ -10,6 +10,7 @@ class Home_Page:
     li_dresses  = (By.XPATH, "//a[@title='Dresses']")
     li_t_shirts = (By.XPATH, "//a[@title='T-shirts']")
     pic_names   = (By.XPATH, "//ul[@id='homefeatured']//child::li")  #-----
+    #price       = (by.XPATH,"")
 
     def __init__(self, browser):
         self.browser=browser
