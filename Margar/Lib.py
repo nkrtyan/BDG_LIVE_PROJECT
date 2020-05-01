@@ -18,7 +18,6 @@ class Lib:
         except:
             print("Browser creation error")
  
-
     def page_load(self, browser):
         try:
             with open('config.json') as file:
@@ -26,7 +25,6 @@ class Lib:
             browser.get(data['url']) 
         except:
             print("Browser url getting error")
-
 
     def write_to_file(self, text):
         try:
