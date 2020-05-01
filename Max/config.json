@@ -1,0 +1,6 @@
+{
+    "driver_path" : "C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe",
+    "url" : "http://automationpractice.com/",
+    "email" : "maxkostanyan@engineer.com",
+    "password" : "test1234" 
+}
