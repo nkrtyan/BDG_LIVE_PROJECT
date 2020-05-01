@@ -4,8 +4,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as Exp
 import os
 import sys
-
-
 import json
 
 class LIB:
