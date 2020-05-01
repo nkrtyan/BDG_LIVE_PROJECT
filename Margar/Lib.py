@@ -8,7 +8,7 @@ import sys
 
 import json
 
-class LIB:
+class Lib:
 
     def open_browser(self):
         try:
