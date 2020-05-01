@@ -32,7 +32,7 @@ class Lib:
     def write_to_file(self, text):
         try:
             with open("info.txt", "a") as file:
-                return file.write("\n" + srt(text))
+                return file.write("\n" + str(text))
         except:
             print("Cannot write text:(write_to_file)")
 

@@ -76,6 +76,7 @@ class Lib:
             browser.save_screenshot(f'Test\{fln_name}_screenshot.png')
         except:
             print("Can not save Screenshot!")
+    
     #9. close_browser
     def close_browser(self, browser):
         try:
@@ -84,6 +85,5 @@ class Lib:
             print("Error! Browser is not close!")
 
 
-#---------------------------
 
 

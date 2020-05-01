@@ -10,8 +10,8 @@ class Home_page:
     dresses        = (By.XPATH,'//*[@id="block_top_menu"]/ul/li[2]/a')
     t_shirts       = (By.XPATH,'//*[@id="block_top_menu"]/ul/li[3]/a')   
     cart           = (By.XPATH, "//a[@title='View my shopping cart']")
-    search_field   = (By.ID,       'search_query_top')
-    search_submit  = (By.NAME,     'submit_search')
+    search_field   = (By.ID, 'search_query_top')
+    search_submit  = (By.NAME, 'submit_search')
     best_sellers   = (By.LINK_TEXT,'Best Sellers')
 
 

@@ -32,7 +32,7 @@ class Lib:
 #2.page_load
 def page_load(self, browser):
     try:
-        with open ("config,json") as f:
+        with open ("config,json") as f:  #Nel, pay attention it should be congig.json
             data = json.load(f)
         browser.get(data['url'])
     except:
@@ -76,12 +76,12 @@ def get_data(self, key):
             return data[key]
     except:
         print("Can't get data!")
-#8.save_screenshot
 
+#8.save_screenshot
 def save_screeshot(self, browser):
     current_filname = os.path.basename(sys.argv[0][:-3])
     try:
-        browser.save_screeshot(f'Test\\{current_filname}_screenshot.png')
+        browser.save_screeshot(f'Test\\{current_filname}_screenshot.png') #Nel, with one backslash it works
     except:
         print("Screenshot is not saved")
 
