@@ -9,8 +9,11 @@ class Home_Page:
     li_women    = (By.XPATH, "//a[@title='Women']")
     li_dresses  = (By.XPATH, "//a[@title='Dresses']")
     li_t_shirts = (By.XPATH, "//a[@title='T-shirts']")
-    pic_names   = (By.XPATH, "//ul[@id='homefeatured']//child::li")  #-----
-    #price       = (by.XPATH,"")
+    pic_names   = (By.XPATH, "//ul[@id='homefeatured']//child::li")  #------7 hat a berum
+    #price       = (By.XPATH, "//span[@class='price product-price' and @itemprop='price']") 28 hata berum mez petq e arajin 14  
+    price       = (By.XPATH, "//*[@id='homefeatured']/li//div[2]//span[@class='price product-price']") # 14 hat a berum 
+
+  
 
     def __init__(self, browser):
         self.browser=browser
