@@ -33,7 +33,7 @@ class LIB:
     #open txt file and write there text
     def write_to_file(self,text):
         try:
-            with open("text.txt", "w") as f:
+            with open("text.txt", "a") as f:
                 f.write("\n" + str(text))
         except:
             print("error with writing file")
@@ -56,24 +56,33 @@ class LIB:
         except:
             print("error with waiting element")
 
+    #wait for elements
+    def wait_for_elements(self, browser, elements):
+        try:
+            WebDriverWait(browser, 100).until(Exp.visibility_of_element_located(elements))
+        except:
+            print("Wait for elements error")
+
 
     #data parsing
     def get__data(self, key):
        try:
             with open("data.json") as f:
                 data = json.load(f)
-                return data[key]
+            return data[key]
                 
         except:
             print("data parsing error")
  
 
 
-
-    def save_screeshot(self, browser):
     #save screenshot
-
-
+    def save_screeshot(self, browser):
+        current_filname = os.path.basename(sys.argv[0][:-3])
+        try:
+            browser.save_screeshot(f'Test\{current_filname}_screenshot.png')
+        except:
+            print("Screenshot is not saved")
 
 
     #close browser
