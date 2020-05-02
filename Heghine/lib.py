@@ -58,7 +58,7 @@ class LIB:
 
     #wait for given element to be visible in UI
     def wait_for_element(self, browser, element):
-        try:
+        try: 
             WebDriverWait(browser, 100).until(EC.visibility_of_all_element_located(element))
         except:
             print("element is not visible")
