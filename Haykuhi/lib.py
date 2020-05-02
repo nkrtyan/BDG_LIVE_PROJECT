@@ -85,7 +85,7 @@ class LIB:
     def save_screenshot(self, browser):
         current_filename=os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
+            browser.save_screenshot(f'Test\\{current_filename}_screenshot.png')
         except:
             print('Failed when saving a screenshot!')
 
