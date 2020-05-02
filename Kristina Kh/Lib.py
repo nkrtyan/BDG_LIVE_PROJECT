@@ -32,7 +32,7 @@ class Lib:
     # open txt file with log name and write there given text
     def write-to_file(self, text):
         try:
-            with open("log.txt","w") as file:
+            with open("log.txt","a") as file:
                 return file.write("\n"+str(text))
         except:
             print("Something went wrong with writing.")
@@ -53,7 +53,7 @@ class Lib:
         except:
             print("Element isn't visible.") 
 
-    def wait_for_element(self, browser, element):
+    def wait_for_element(self, browser, elements):
         try:
             WebDriverWait(browser,60).until(EC.visibility_of_all_elements_located(elements))
             
