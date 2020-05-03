@@ -22,3 +22,22 @@ class Home:
 
     def __init__(self, browser):
         self.browser = browser
+
+    #click Contact_Us 
+    def click_contuct_us(self, browser):
+        LIB.wait_for_element(self, browser, self.contact_us)
+        self.browser.find_element(*self.contact_us).click()
+
+    #return product name:price list
+    def give_product_name_price(self, browser):
+        produc_name_list = []
+        produc_price_list=[]
+        LIB.wait_for_elements(self, browser, self.product_name)
+        produc_name = self.browser.find_elements(*self.product_name)
+        for i in produc_name:
+            produc_name_list.append(i.text)
+        produc_price = self.browser.find_elements(*self.product_price)
+        for i in produc_price:
+            produc_price_list.append(i.text)
+        del produc_price_list[1::2] #Delete every second element (counting from the firts) 
+        return dict(zip(produc_name_list, produc_price_list))
