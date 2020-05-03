@@ -1,16 +1,20 @@
   
-from  selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from lib import LIB
+
 
 class Sign_in_page:
 
-    # Locators
-    email_create       = (By.ID,"email_create")
-    em_create_submit   = (By.ID,"SubmitCreate")
-    email_address      = (By.ID,"email")
-    password           = (By.ID,"passwd")
-    sign_in_button     = (By.ID,"SubmitLogin")
-    forgot_password    = (By.XPATH,'//*[@id="login_form"]//a')
+
+    #---locators---
+    email_address    = (By.ID, 'email')
+    password         = (By.ID, 'passwd')
+    sign_in_btn      = (By.ID, 'SubmitLogin')
+    my_account_title = (By.XPATH, "//h1[text()='My account']")
     
-    # Constructor
+    
+    #init
     def __init__(self, browser):
         self.browser = browser
