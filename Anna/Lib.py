@@ -30,64 +30,64 @@ class Lib:
             print("Something went wrong while opening the browser")
 
 #2.page_load
-def page_load(self, browser):
-    try:
-        with open ("config,json") as f:
-            data = json.load(f)
-        browser.get(data['url'])
-    except:
-        print("Something went wrong with page loading!")
+    def page_load (self, browser):
+        try:
+            with open ("config,json") as f:
+                data = json.load(f)
+            browser.get(data['url'])
+        except:
+            print("Something went wrong with page loading!")
 
 #3.write_to_file with log name and writhe there given text
-def write_to_file (self,text):
-    try:
-        with open("log.txt", "a") as file:
-            return file.write("\n"+str(text))
-    except:
-        print("Error has been faced during writing to file!")
+    def write_to_file (self,text):
+        try:
+            with open("log.txt", "a") as file:
+                return file.write("\n"+str(text))
+        except:
+            print("Error has been faced during writing to file!")
 
 #4.move_to_element
-def move_to_element(self, browser, element):
+    def move_to_element(self, browser, element):
+            try:
+                action=ActionChains(browser)
+                action.move_to_element(element).perform()
+            except:
+                print("Impossible moving to element!")
+
+    #5.wait_for_element
+    def wait_for_element(self, browser, element):
+            try:
+                WebDriverWait(browser, 100).until (EC.visibility_of_element_located(element))
+            except:
+                print("Can't locat element!")
+
+    #6.wit_for_elements
+    def wait_for_elements(self, browser, elements):
+            try:
+                WebDriverWait(browser, 100).until(EC.visibility_of_any_elements_located(elements))
+            except:
+                print("Can't locate elements!")
+
+    #7.get_data
+    def get_data(self, key):
         try:
-            action=ActionChains(browser)
-            action.move_to_element(element).perform()
+            with open('data.json') as f:
+                data=json.load(f)
+                return data[key]
         except:
-            print("Impossible moving to element!")
+            print("Can't get data!")
+    #8.save_screenshot
 
-#5.wait_for_element
-def wait_for_element(self, browser, element):
+    def save_screeshot(self, browser):
+        current_filname = os.path.basename(sys.argv[0][:-3])
         try:
-            WebDriverWait(browser, 100).until (EC.visibility_of_element_located(element))
+            browser.save_screeshot(f'Test\\{current_filname}_screenshot.png')
         except:
-            print("Can't locat element!")
+            print("Screenshot is not saved")
 
-#6.wit_for_elements
-def wait_for_elements(self, browser, elements):
+    #9.close_browser
+    def close_browser(self, browser):
         try:
-            WebDriverWait(browser, 100).until(EC.visibility_of_any_elements_located(elements))
+            browser.quit()
         except:
-            print("Can't locate elements!")
-
-#7.get_data
-def get_data(self, key):
-    try:
-        with open('data.json') as f:
-            data=json.load(f)
-            return data[key]
-    except:
-        print("Can't get data!")
-#8.save_screenshot
-
-def save_screeshot(self, browser):
-    current_filname = os.path.basename(sys.argv[0][:-3])
-    try:
-        browser.save_screeshot(f'Test\\{current_filname}_screenshot.png')
-    except:
-        print("Screenshot is not saved")
-
-#9.close_browser
-def close_browser(self, browser):
-    try:
-        browser.quit()
-    except:
-        print("Browser is not  closed!")
+            print("Browser is not  closed!")
