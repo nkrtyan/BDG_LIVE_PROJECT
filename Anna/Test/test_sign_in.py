@@ -3,14 +3,12 @@ from POM.Home_page import Home_page
 from POM.Sign_in_page import Sign_in
 import json
 
-'''
-Scenario steps
+'''Scenario steps
 1. Go to URL
 2. Click to Sign In in Home Page
 3. Fill email address and password
 4. Click Sign In button
-5. Verify that you signed in successfully
-'''
+5. Verify that you signed in successfully'''
 
 def test_1():
     try:

@@ -32,7 +32,7 @@ class Lib:
     def write_to_file(self, text):
         try:
             with open("info.txt", "a") as file:
-                return file.write("\n" + srt(text))
+                return file.write("\n" + str(text))
         except:
             print("Cannot write text:(write_to_file)")
 
@@ -71,7 +71,7 @@ class Lib:
     def save_screenshot(self, browser):
         current_filename = os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f"Test\{current_filename}_screenshot.png")
+            browser.save_screenshot(f"Test\\{current_filename}_screenshot.png")
         except:
             print("Cannot save screenshot:(save_screenshot)")
 

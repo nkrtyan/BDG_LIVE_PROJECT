@@ -37,14 +37,14 @@ class LIB:
         try:
             with open('config.json') as f:
                 data=json.load(f)
-            browser.get(data['page_url'])   #why we use browser.get instead of self.browser.get?
+            browser.get(data['page_url'])   #why we use browser.get instead of self.browser.get? becaus we shoul callthis function from test case where we have own browser. We should pass it
         except:
             print("Something failed when loading the page!")
 
     # open a txt file and write a given info in it
     def write_to_file(self, text):
         try:
-            with open('log.txt', 'w+') as file:
+            with open('log.txt', 'a') as file:
                 file.write('/n' + str(text))
         except:
             file.close()
@@ -85,7 +85,7 @@ class LIB:
     def save_screenshot(self, browser):
         current_filename=os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
+            browser.save_screenshot(f'Test\\{current_filename}_screenshot.png')
         except:
             print('Failed when saving a screenshot!')
 

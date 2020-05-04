@@ -19,7 +19,7 @@ Lib class has the following methods
 9. close_browser
 '''
 
-class LIB:
+class Lib:
     #create Chrome driver
     def open_browser(self):
         try:
@@ -58,8 +58,8 @@ class LIB:
 
     #wait for given element to be visible in UI
     def wait_for_element(self, browser, element):
-        try:
-            WebDriverWait(browser, 100).until(EC.visibility_of_all_element_located(element))
+        try: 
+            WebDriverWait(browser, 100).until(EC.visibility_of_element_located(element))
         except:
             print("element is not visible")
             
@@ -83,7 +83,7 @@ class LIB:
     def save_screenshot(self, browser):
         current_filename=os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
+            browser.save_screenshot(f'Test\\{current_filename}_screenshot.png')
         except:
             print("screenshot is not saved")
 

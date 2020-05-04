@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC #Nel, this lib also important, you use it
 from selenium.webdriver.support import expected_conditions as expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 import json
@@ -60,9 +61,7 @@ class LIB:
     #wait for given element to be vissible in UI
     def wait_for_element(self, browser, element):
         try:
-            WebDriverWait(browser, 10).until(
-                EC.persence_of_element_located(element)
-            )
+            WebDriverWait(browser, 10).until(EC.persence_of_element_located(element))
         except:
             print("Can't located element!")
 
@@ -88,7 +87,7 @@ class LIB:
     def save_screenshot(self, browser):
         current_filename=os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f'Test\\{current_filename}_screenshot.png')
+            browser.save_screenshot(f'Test\\{current_filename}_screenshot.png') #Nel, it will works with one \
         except:
             print("Screenshot is not saved!")
 
