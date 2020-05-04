@@ -37,7 +37,7 @@ class LIB:
         try:
             with open('config.json') as f:
                 data=json.load(f)
-            browser.get(data['page_url'])   #why we use browser.get instead of self.browser.get?
+            browser.get(data['page_url'])   #why we use browser.get instead of self.browser.get? becaus we shoul callthis function from test case where we have own browser. We should pass it
         except:
             print("Something failed when loading the page!")
 
