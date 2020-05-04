@@ -44,7 +44,7 @@ class LIB:
     # open a txt file and write a given info in it
     def write_to_file(self, text):
         try:
-            with open('log.txt', 'w+') as file:
+            with open('log.txt', 'a') as file:
                 file.write('/n' + str(text))
         except:
             file.close()
