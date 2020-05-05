@@ -39,7 +39,6 @@ class LIB:
                 data = json.load(f)
             browser.get(data['url'])
         except:
-            
             print("Somthing wrong with page_load!")
 
     # open txt file with log name and write there given text
@@ -86,7 +85,7 @@ class LIB:
     def save_screenshot(self, browser):
         current_filename = os.path.basename(sys.argv[0][:-3])
         try:
-           browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
+           browser.save_screenshot(f'Test\\{current_filename}_screenshot.png')
         except:
             print ("Screenshot is not saved!")            
 
