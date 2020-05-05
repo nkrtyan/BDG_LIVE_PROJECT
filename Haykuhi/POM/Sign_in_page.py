@@ -12,7 +12,7 @@ class Sign_in:
     password            =(By.ID, "passwd")
     sign_in_button      =(By.ID, "SubmitLogin")
     my_account_title    =(By.XPATH, "//h1[text()='My account']")
-
+    
     # page constructor
     def __init__(self, browser):
         self.browser=browser

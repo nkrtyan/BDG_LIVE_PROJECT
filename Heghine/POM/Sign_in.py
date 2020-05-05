@@ -1,20 +1,14 @@
-  
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from lib import LIB
 
+class Sing_in:
 
-class Sign_in_page:
+    # ___Locators___
 
+    email_id =               (By.ID,"email")
+    password_id =            (By.ID,"passwd")
+    submit_btn_id =          (By.ID,"SubmitLogin")
+    my_account_title_xpath = (By.XPATH,"//*[@id='center_column']/h1")
 
-    #---locators---
-    email_address    = (By.ID, 'email')
-    password         = (By.ID, 'passwd')
-    sign_in_btn      = (By.ID, 'SubmitLogin')
-    my_account_title = (By.XPATH, "//h1[text()='My account']")
-    
-    
-    #init
     def __init__(self, browser):
         self.browser = browser
