@@ -96,26 +96,3 @@ class Lib:
             print("Browser is not  closed!")
             print("Can't locate elements!")
 
-#7.get_data
-    def get_data(self, key):
-        try:
-            with open('data.json') as f:
-                data=json.load(f)
-                return data[key]
-        except:
-            print("Can't get data!")
-
-#8.save_screenshot
-    def save_screeshot(self, browser):
-        current_filname = os.path.basename(sys.argv[0][:-3])
-        try:
-            browser.save_screeshot(f'Test\\{current_filname}_screenshot.png') #Nel, with one backslash it works
-        except:
-            print("Screenshot is not saved")
-
-    #9.close_browser
-    def close_browser(self, browser):
-        try:
-            browser.quit()
-        except:
-            print("Browser is not  closed!")

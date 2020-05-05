@@ -11,7 +11,7 @@ from selenium import webdriver
 5. Close browser
 '''
 
-def test_1():
+def test_2():
     try:
         #open browser
         obj_lib = Lib()
@@ -21,21 +21,21 @@ def test_1():
         obj_lib.page_load(browser)
 
         #create contuct_us object
-        obj_contuct_us = Contact_Us(browser)
-        obj_home = Home(browser)
+        obj_contuct_us = Contact_us_page(browser)
+        obj_home = Home_page(browser)
 
         #steps
         obj_home.click_contuct_us(browser)
         obj_contuct_us.choose_subject_heading(browser)
         obj_contuct_us.input_email_address()
-        obj_contuct_us.input_order_referenc()
+        obj_contuct_us.input_order_reference()
         obj_contuct_us.input_message()
         obj_contuct_us.click_send_button()
 
         #Verify that message is sending successfully
         success_message = obj_lib.get_data('contact_us_success_message')
         assert success_message in browser.page_source
-        print('Test run pass!')
+        print('Test run passed successfully!')
 
     except:
         obj_lib.save_screenshot(browser)
