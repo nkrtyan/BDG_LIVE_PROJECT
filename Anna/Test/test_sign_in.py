@@ -1,4 +1,4 @@
-from lib import Lib
+from Lib import Lib
 from POM.Home_page import Home_page
 from POM.Sign_in_page import Sign_in
 import json
