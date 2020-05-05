@@ -40,7 +40,7 @@ class Contact_Us:
 
     #input message
     def input_message(self):
-        message = LIB.get_data(self, 'contuct_us_input_message')
+        message = LIB.get_data(self, 'contact_us_success_message')
         self.browser.find_element(*self.input_message_text).send_keys(message)
 
     #click Send button
