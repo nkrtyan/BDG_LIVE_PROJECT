@@ -18,9 +18,10 @@ def test_1():
         email_address = data['eMail'] 
         password      = data['password']       
 
-        #open browser,#navigate to url
+        #open browser,
         obj_lib = Lib()
         browser = obj_lib.open_browser()
+        #navigate to url
         obj_lib.page_load(browser)
 
         #Create Home page objcet
