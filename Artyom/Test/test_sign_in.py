@@ -31,4 +31,5 @@ def test_1():
     finally:
         obj_lib.close_browser(browser)
     
-
+#---Nel, use comments always
+# in except block need to add raise exception for see error in cmd

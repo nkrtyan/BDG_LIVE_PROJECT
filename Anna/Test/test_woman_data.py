@@ -43,3 +43,5 @@ def test_4():
     finally:
         #Close browser
         obj_lib.close_browser(browser)
+
+#---Nel, need to raise exception, you can use also pytest.fail(e), e is a exception       

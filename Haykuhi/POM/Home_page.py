@@ -49,3 +49,4 @@ class Home:
         # create dictionary from the 2 lists and return it
         return dict(zip(product_names_list, product_prices_list))
 
+#Nel, very good, you unmderstand function meaning

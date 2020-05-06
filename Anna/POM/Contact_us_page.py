@@ -21,3 +21,5 @@ class Contact_us_page:
     def uploade_file(self, browser):
         file_selected    = (By.XPath, '//*[@id="fileUpload"]')
         browser.find_element(*file_selected).send_keys('local path of your image')
+
+    #---Nel, where you use upload_file function?-----        

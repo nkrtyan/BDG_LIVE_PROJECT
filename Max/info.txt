@@ -1,3 +1,0 @@
-
-{'Printed Dress': '$50.99', 'Printed Summer Dress': '$30.50', 'Printed Chiffon Dress': '$16.40'}
-{'Printed Dress': '$50.99', 'Printed Summer Dress': '$30.50', 'Printed Chiffon Dress': '$16.40'}

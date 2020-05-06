@@ -72,3 +72,5 @@ def test_3():
         finally:
             # close the browser
             obj_lib.close_browser(browser)   
+
+#Nel, you test should be passed in case if it find error message, its negative test case         

@@ -47,3 +47,5 @@ def test_3():
         raise
     finally:
         obj.close_browser(browser)
+
+#Nel, good, part with product would be better to keep as function in POM, as you can use this in future        

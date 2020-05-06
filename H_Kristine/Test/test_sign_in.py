@@ -52,3 +52,5 @@ def test_1():
     finally:
         br.close_browser(browser)
 
+
+#--Nel, raise part use in except block
