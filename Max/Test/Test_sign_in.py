@@ -2,7 +2,8 @@ from Lib import Lib
 from POM.Homepage import Homepage
 from POM.Sign_In import Sing_in
 import json
-import time
+import pytest
+# import time
 
 '''
 Scenario steps
@@ -37,7 +38,7 @@ def test_1():
         obj_lib.wait_for_element(browser, obj_sing_in.email_id)
         browser.find_element(*obj_sing_in.email_id).send_keys(email_address)
         browser.find_element(*obj_sing_in.password_id).send_keys(password)
-        time.sleep(10)
+        # time.sleep(10)
         browser.find_element(*obj_sing_in.submit_btn_id).click()
 
 # Verify that i sign in successfully
@@ -47,14 +48,11 @@ def test_1():
         print("TEST_1: PASS")
 
 # Take screenshot when test fails & print error
-    except Exception as e:
-        
-        print(e)
+    except Exception as error:
         obj_lib.save_screenshot(browser)
-        print("TEST_1: FAIL")
+        pytest.fail(error)
 
 # Close the browser
     finally:
-
-        time.sleep(10)
+        # time.sleep(10)
         obj_lib.close_browser(browser)

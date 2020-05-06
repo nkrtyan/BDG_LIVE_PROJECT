@@ -1,7 +1,8 @@
 from Lib import Lib
 from POM.Homepage import Homepage
 from POM.Contact_us import Contact_us
-import time
+import pytest
+# import time
 
 
 
@@ -42,12 +43,13 @@ def test_2():
 
 # Take a screenshot when test fails
 
-    except:
+    except Exception as error:
         obj_lib.save_screenshot(browser)
-        print("test_2: FAIL")
+        pytest.fail(error)
+        # print("test_2: FAIL")
 
 # Close browser
 
     finally:
-        time.sleep(10)
+        # time.sleep(10)
         obj_lib.close_browser(browser)
