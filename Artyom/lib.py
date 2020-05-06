@@ -20,7 +20,7 @@ class LIB :
     #navigate to given url
     def page_load (self, browser):
         try:
-            with open ("confi.json") as f:
+            with open ("config.json") as f:
                 data = json.load(f)
             browser.get(data["url"])
         except:
