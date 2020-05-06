@@ -26,7 +26,8 @@ class Lib:
         try:
             with open('config.json') as f:
                 data=json.load(f)
-            self.browser.get(data['url'])
+                browser.get(data['url'])
+            #self.browser.get(data['url'])
         except:
             print("Page is not load!!!")
 
@@ -73,7 +74,7 @@ class Lib:
     def save_screenshot(self, browser):
         fln_name=os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screenshot(f'Test\{fln_name}_screenshot.png')
+            browser.save_screenshot(f'Test\\{fln_name}_screenshot.png')
         except:
             print("Can not save Screenshot!")
     

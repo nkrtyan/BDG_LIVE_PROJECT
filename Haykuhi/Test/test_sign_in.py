@@ -8,6 +8,14 @@ import json
 import pytest
 
 
+'''
+1. Navigate to URL
+2. Click on Sign In button of the Home Page
+3. Fill in the email address and password fields
+4. Click on Sign In button
+5. Verify that signed in successfully
+'''
+
 def test_1():
     try:
         #create lib page object
@@ -17,12 +25,12 @@ def test_1():
         browser=obj_lib.open_browser()
         
         # navigate to the url
-        browser.page_load(browser)
+        obj_lib.page_load(browser)
 
         # create Sign_in_page object
         obj_sign_in=Sign_in(browser)
 
-        # parse data from config.json 
+        # parse data from config.json for email and password fields
         with open('config.json') as f:
             data=json.load(f)
         email_address=data['email']
@@ -44,12 +52,20 @@ def test_1():
         # click the sign in button
         browser.find_element(*obj_sign_in.sign_in_button).click()
 
+        # check that signed in to my account has been succesfull
+        try:
+            sign_out_title=browser.find_element(*obj_sign_in.sign_out).title
+            print(sign_out_title)
+        except:
+            print("The web element Sign out is not fount, so you arer signed in!")
 
-    except:
-        print('Test 1 failed!')
-
-        # save the screenshot of the test file which has failed
-        obj_lib.save_screenshot(browser)
+        print('Test 1 passed!')
+    
+    except Exception as e:
+            # save the screenshot of the test file which has failed
+            obj_lib.save_screenshot(browser)
+            pytest.fail(e)
+            print('Test 1 failed!')
     
     finally:
         # close the browser
