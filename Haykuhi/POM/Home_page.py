@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from lib import LIB
 
 
 class Home:
@@ -22,3 +23,7 @@ class Home:
     # page constructor
     def __init__(self, browser):
         self.browser=browser
+
+    def click_contact_us(self, browser):
+        LIB.wait_for_element(self, browser, self.contact_us)
+        self.browser.find_element(*self.contact_us).click()

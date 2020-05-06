@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from Lib import Lib
 
 class Homepage:
 
@@ -17,3 +18,11 @@ class Homepage:
 
     def __init__(self, browser):
         self.browser = browser
+
+# Click on contact us btn
+    def click_on_contact_us(self, browser):
+        try:
+            Lib.wait_for_element(self, browser, self.contact_us_id)
+            self.browser.find_element(*self.contact_us_id).click()
+        except:
+            print("Cannot act: click_on_contact_us")
