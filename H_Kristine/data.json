@@ -6,7 +6,7 @@
     "contact_us_input_message":"Here is my message.",
     "create_an_account_error_message":"Invalid email address.",
     "invalid_email":"test@",
-    "valid_email":"test@gmail.com",
+    "valid_email":"kristina.hambartzumyan@gmail.com",
     "not existing_email":"test@tt.tt",
     "forgot_password_error_message":"There is no account registered for this email address.",
     "sign_in_error_message":"Authentication failed.",

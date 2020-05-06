@@ -1,63 +1,57 @@
-from lib import LIB
-from POM.Home import Home_page
-from POM.Sign_in import Sign_in_page
-import json 
-
+from Lib import Lib
+from POM.Homepage import Homepage
+from POM.Sign_in import Sing_in
+import json
+import time
 '''
 Scenario steps
 1. Go to URL
 2. Click to Sign In in Home Page
-3. Fill email address and password
-4. Click Sign In button
-5. Verify that you signed successfully
+3. Sing in with valid data
+5. Verify that you are sign in successfully
+
 '''
 
-def test_4():
+def test_1():
     try:
+    
+    # Get data for sing in form config.json 
+        with open("config.json") as file:
+            data = json.load(file)
+        email_address = data["email"]
+        password      = data["password"]
 
-        # get email and pass from config
-        with open('config.json') as f:
-            data = json.load(f)
-        email_address = data['eMail'] 
-        password      = data['password']       
-
-        #open browser
-        obj_lib = LIB()
+    # Open browser, maximazie window, get URL
+        obj_lib = Lib()
         browser = obj_lib.open_browser()
-
-        # navigate to url
         obj_lib.page_load(browser)
 
-        #Create Home page objcet
-        obj_home = Home_page(browser)
+    # Go Home page & click on Sing in btn
+        obj_homepage = Homepage(browser)
+        browser.find_element(*obj_homepage.sing_in_xpath).click()
 
-        #click on Sign in
-        browser.find_element(*obj_home.sign_in).click()
+    # Go sing in page
+        obj_sing_in = Sing_in(browser)
 
-        #Create Sign In object
-        obj_signin = Sign_in_page(browser)
+    # Sing in with valid data
+        obj_lib.wait_for_element(browser, obj_sing_in.email_id)
+        browser.find_element(*obj_sing_in.email_id).send_keys(email_address)
+        browser.find_element(*obj_sing_in.password_id).send_keys(password)
+        time.sleep(10)
+        browser.find_element(*obj_sing_in.submit_btn_id).click()
 
+    # Verify that i sign in successfully
+        obj_lib.wait_for_element(browser, obj_sing_in.my_account_title_xpath)
+        browser.find_element(*obj_sing_in.my_account_title_xpath)
 
-        #submit with email and pass
-        obj_lib.wait_for_element(browser, obj_signin.email_address)
-        browser.find_element(*obj_signin.email_address).send_keys(email_address)
-        browser.find_element(*obj_signin.password).send_keys(password)
-
-        #click on Sign In button
-        browser.find_element(*obj_signin.sign_in_btn).click()
-
-        #Check that you are in My accout page
-        browser.find_element(*obj_signin.my_account_title)
-
-        print('Test run pass!')
+        print("TEST_1: PASS")
 
     except Exception as e:
-        print (e)
+        print(e)
         obj_lib.save_screenshot(browser)
-        print('Test run failed!')
+        print("TEST_1: FAIL")
 
     finally:
-        #Close browser
+    # Close the browser
+        time.sleep(10)
         obj_lib.close_browser(browser)
-
-
