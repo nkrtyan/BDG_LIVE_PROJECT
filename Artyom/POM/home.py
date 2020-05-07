@@ -19,5 +19,5 @@ class Home:
     # clicking to contuct us
     def click_contuct_us(self, browser):
         LIB.wait_for_element(self, browser, self.contact_us)
-    self.browser.find_element(*self.contact_us).click()
+        self.browser.find_element(*self.contact_us).click()
 
