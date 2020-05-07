@@ -10,7 +10,7 @@ class Home:
     dresses        = (By.LINK_TEXT , "Dresses")
     t_shirts       = (By.LINK_TEXT , "T-shirts")
     search_field   = (By.ID , "search_query_top")
-    search_btn     = (By.Name , "submit_search")
+    search_btn     = (By.NAME , "submit_search")
     cart           = (By.XPATH , "//span[@class='ajax_cart_no_product']")
 
     def __init__(self, browser):
