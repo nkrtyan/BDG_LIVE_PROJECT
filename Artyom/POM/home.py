@@ -13,6 +13,11 @@ class Home:
     search_btn     = (By.Name , "submit_search")
     cart           = (By.XPATH , "//span[@class='ajax_cart_no_product']")
 
-def __init__(self, browser):
-    self.browser = browser
+    def __init__(self, browser):
+        self.browser = browser
+
+    # clicking to contuct us
+    def click_contuct_us(self, browser):
+        LIB.wait_for_element(self, browser, self.contact_us)
+    self.browser.find_element(*self.contact_us).click()
 
