@@ -46,5 +46,4 @@ class Contact_us_page:
     #click Send button
     def click_send_button(self):
         self.browser.find_element(*self.send_button).click()
-=======
  
