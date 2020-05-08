@@ -4,6 +4,7 @@ from lib import LIB
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import time
 import json
 import pytest
 
@@ -14,7 +15,6 @@ import pytest
 4. Write in the file all the found products names with their prices
 5. Close the browser
 '''
-# as a result returns a blank dictionary in txt file, can not find the problem 
 
 def test_4():
 
@@ -33,11 +33,15 @@ def test_4():
             obj_lib.wait_for_element(browser, obj_home.women)
             browser.find_element(*obj_home.women).click()
 
+            # wait for the product names and prices in Women tab to be visible in Home page
+            obj_lib.wait_for_elements(browser, obj_home.product_names)
+            obj_lib.wait_for_elements(browser, obj_home.product_prices)
+
             # return dictionary with Women tab's products names and prices  
             products_names_prices = obj_home.find_products_name_price(browser)
 
             # write the products names and prices in log.txt file
-            obj_lib.write_to_file(products_names_prices)    #!!!returns a blank dictionary in txt file, can not find the problem :(
+            obj_lib.write_to_file(products_names_prices)    
 
         except Exception as e:
             # save the screenshot of the test file which has failed
