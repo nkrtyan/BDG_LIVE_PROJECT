@@ -14,13 +14,14 @@ class LIB :
                 data = json.load(f)
             browser = webdriver.Chrome(data["driver_path"])
             browser.maximize_window()
+            return browser
         except:
             print("Something went wrong during browser opening")
 
     #navigate to given url
     def page_load (self, browser):
         try:
-            with open ("confi.json") as f:
+            with open ("config.json") as f:
                 data = json.load(f)
             browser.get(data["url"])
         except:
@@ -29,7 +30,7 @@ class LIB :
     #open txt file with log name and write there given text
     def write_to_file (self, text):
         try:
-            with open ("log.txt" , "w+") as file:
+            with open ("log.txt" , "a") as file:
                 return file.write ("\n" + str(text))
         except:
             print ("Error during writing the file")
@@ -66,7 +67,7 @@ class LIB :
     
     #save screenshot
     def save_screenshot (self, browser):
-        current_filename = os.path.basename(sys.argv[0]:[-3])
+        current_filename = os.path.basename(sys.argv[0]:[-3])  #---Nel, should be [0][:-3]
         try:
             browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
         except:
