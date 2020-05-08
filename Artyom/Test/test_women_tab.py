@@ -28,3 +28,5 @@ def test_4():
         """ I didn't fully understand part of locating list of elements yet, so I decided 
         don't just copy your code, I will view the lesson one more time, 
         and maybe will add this part"""
+
+        #Nel, ok very, good just find locator which return you list f product names and product prices

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
   "tr_names": [
     "ppc-practical-course",
@@ -109,7 +109,7 @@
   "error_messagge" : "One or more fields have an error. Please check and try again.",
   "error_messagge_out" : "The field is required."
 }
-=======
+
 {
   "tr_names": [
     "ppc-practical-course",
@@ -222,4 +222,4 @@
   "error_messagge" : "One or more fields have an error. Please check and try again.",
   "error_messagge_out" : "The field is required."
 }
->>>>>>> ef91acdc8628cbd0d78d7973762a0660138933ec
+

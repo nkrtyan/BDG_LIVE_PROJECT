@@ -46,3 +46,4 @@ def test_2():
         obj_lib.close_browser(browser)
             
 
+#Nel, use pytest.fail(e) or just raise for exception in except block
