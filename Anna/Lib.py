@@ -63,7 +63,7 @@ class Lib:
             except:
                 print("Can't locat element!")
 
-    #6.wit_for_elements
+    #6.wait_for_elements
     def wait_for_elements(self, browser, elements):
             try:
                 WebDriverWait(browser, 100).until(EC.visibility_of_any_elements_located(elements))
@@ -78,12 +78,12 @@ class Lib:
                 return data[key]
         except:
             print("Can't get data!")
-    #8.save_screenshot
 
+    #8.save_screenshot
     def save_screeshot(self, browser):
-        current_filname = os.path.basename(sys.argv[0][:-3])
+        current_filename = os.path.basename(sys.argv[0][:-3])
         try:
-            browser.save_screeshot(f'Test\\{current_filname}_screenshot.png')
+            browser.save_screeshot(f'Test\\{current_filename}_screenshot.png')
         except:
             print("Screenshot is not saved")
 
@@ -94,5 +94,4 @@ class Lib:
         except:
 
             print("Browser is not  closed!")
-            print("Can't locate elements!")
 

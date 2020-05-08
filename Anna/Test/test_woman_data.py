@@ -1,7 +1,7 @@
 from Lib import Lib
 from POM.Home_page import Home_page
 from pathlib import Path
-
+import pytest
 
 '''
 1. Go to URL
@@ -34,12 +34,13 @@ def test_4():
         obj_lib.write_to_file(product_result)
 
         print('Test run passed successfully!')
-
+        
     except Exception as e:
-        print(e)
+        pytest.fail(e)
+        print("not write in file")
         obj_lib.save_screenshot(browser)
-        print('Test run failed!')
 
+    
     finally:
         #Close browser
         obj_lib.close_browser(browser)
