@@ -14,6 +14,7 @@ class LIB :
                 data = json.load(f)
             browser = webdriver.Chrome(data["driver_path"])
             browser.maximize_window()
+            return browser
         except:
             print("Something went wrong during browser opening")
 
@@ -29,7 +30,7 @@ class LIB :
     #open txt file with log name and write there given text
     def write_to_file (self, text):
         try:
-            with open ("log.txt" , "w+") as file:
+            with open ("log.txt" , "a") as file:
                 return file.write ("\n" + str(text))
         except:
             print ("Error during writing the file")
