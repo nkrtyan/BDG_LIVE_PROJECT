@@ -33,14 +33,14 @@ class Lib:
 
     def page_load(self, browser):
         try:
-            with open ("config,json") as f:  #Nel, pay attention it should be congig.json
+            with open ("config.json") as f: 
                 data = json.load(f)
             browser.get(data['url'])
         except:
             print("Something went wrong with page loading!")
 
 
-#3.write_to_file with log name and writhe there given text
+#3.write_to_file with log name and write there given text
     def write_to_file (self,text):
         try:
             with open("log.txt", "a") as file:
