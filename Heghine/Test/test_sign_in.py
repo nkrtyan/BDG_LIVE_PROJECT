@@ -55,3 +55,6 @@ def test_1():
     # Close the browser
         time.sleep(10)
         obj_lib.close_browser(browser)
+
+#Nel, dont use time.sleep    
+# use raise part in exception block as descied yesterday    

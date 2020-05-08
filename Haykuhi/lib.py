@@ -44,8 +44,8 @@ class LIB:
     # open a txt file and write a given info in it
     def write_to_file(self, text):
         try:
-            with open('log.txt', 'a') as file:
-                file.write('/n' + str(text))
+            with open('log.txt', 'w+') as file:
+                file.write('\n' + str(text))
         except:
             file.close()
             print('Something failed when opening a txt file!')
@@ -79,7 +79,7 @@ class LIB:
                 data=json.load(f)
             return data[key]
         except:
-            print("Something failed when parsing data!")
+            print("Something failed when parsing data from data.json!")
 
     # save the name of the current py file
     def save_screenshot(self, browser):

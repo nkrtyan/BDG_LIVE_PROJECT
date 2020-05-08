@@ -67,7 +67,7 @@ class LIB :
     
     #save screenshot
     def save_screenshot (self, browser):
-        current_filename = os.path.basename(sys.argv[0]:[-3])
+        current_filename = os.path.basename(sys.argv[0]:[-3])  #---Nel, should be [0][:-3]
         try:
             browser.save_screenshot(f'Test\{current_filename}_screenshot.png')
         except:

@@ -51,7 +51,8 @@ def test_3():
         obj_lib.close_browser(browser)
 
 
-
+#Nel, use raise in except block
+#there are parts which you use in positive case, it means code duplication, would be better to keep in POM
 
 
 

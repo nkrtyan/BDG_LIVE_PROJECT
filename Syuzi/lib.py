@@ -69,8 +69,7 @@ class LIB:
        try:
             with open("data.json") as f:
                 data = json.load(f)
-            return data[key]
-                
+            return data[key]   
         except:
             print("data parsing error")
  
@@ -88,7 +87,7 @@ class LIB:
     #close browser
     def close_browser(self):
         try:
-            browser.quit()
+            browser.quit()  #---Nel, who is browser here?
         except:
             print("can't close browser")
 

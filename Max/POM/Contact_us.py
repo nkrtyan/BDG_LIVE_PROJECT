@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-import time
+# import time
 
 class Contact_us:
 
@@ -28,7 +28,7 @@ class Contact_us:
             element = self.browser.find_element(*self.subject_heading_id)
             element.click()
             select = Select(element)
-            time.sleep(7)
+            # time.sleep(7)
             select.select_by_visible_text(choosen_text)
             # time.sleep(10)
 
@@ -70,7 +70,7 @@ class Contact_us:
     def click_on_send_btn(self):
 
         try:
-            time.sleep(7)
+            # time.sleep(7)
             self.browser.find_element(*self.send_btn_id).click()
             
         except:

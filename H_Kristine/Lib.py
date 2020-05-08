@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC #Nel, this lib also important, you use it
-from selenium.webdriver.support import expected_conditions as expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 import json
 import os
@@ -61,7 +60,7 @@ class LIB:
     #wait for given element to be vissible in UI
     def wait_for_element(self, browser, element):
         try:
-            WebDriverWait(browser, 10).until(EC.persence_of_element_located(element))
+            WebDriverWait(browser, 100).until(EC.visibility_of_element_located(element))
         except:
             print("Can't located element!")
 
@@ -69,7 +68,7 @@ class LIB:
     def wait_for_elements(self, browser, elements):
         try:
             WebDriverWait(browser, 100).until(
-                EC.persence_of_all_elements_located(elements)
+                EC.visibility_of_any_elements_located(elements)
             )
         except:
             print("Can't all elements located!")

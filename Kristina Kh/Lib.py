@@ -30,7 +30,7 @@ class Lib:
             print("Something went wrong during the page loading.") 
 
     # open txt file with log name and write there given text
-    def write-to_file(self, text):
+    def write_to_file(self, text):
         try:
             with open("log.txt","a") as file:
                 return file.write("\n"+str(text))

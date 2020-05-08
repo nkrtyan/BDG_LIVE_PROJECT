@@ -53,7 +53,10 @@ def test_1():
         print (e)
         obj_lib.save_screenshot(browser)
         print('Test run failed!')
+        raise #--------Nel, need to raise exception to see in cmd-----
+        
 
     finally:
         #Close browser
         obj_lib.close_browser(browser)
+
