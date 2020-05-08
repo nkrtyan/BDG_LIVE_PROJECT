@@ -12,7 +12,7 @@ Scenario steps
 
 '''
 
-def test_1():
+def test_4():
     try:
     
     # Get data for sing in form config.json 
