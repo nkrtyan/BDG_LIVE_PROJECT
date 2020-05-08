@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.key import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import json
@@ -53,7 +54,7 @@ class Lib:
         except:
             print("Element isn't visible.") 
 
-    def wait_for_element(self, browser, elements):
+    def wait_for_elements(self, browser, elements):
         try:
             WebDriverWait(browser,60).until(EC.visibility_of_all_elements_located(elements))
             
