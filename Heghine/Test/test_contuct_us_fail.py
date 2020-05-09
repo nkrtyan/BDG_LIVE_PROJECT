@@ -2,6 +2,8 @@ from Lib import Lib
 from POM.Contact_Us import Contact_Us
 from POM.Homepage import Homepage
 from selenium import webdriver
+import pytest
+
 
 '''
 1. Go to URL
@@ -37,9 +39,16 @@ def test_2():
         assert success_message in browser.page_source
         print('Test run pass!')
 
-    except:
+    except Exception as e:
         obj_lib.save_screenshot(browser)
-        print('Test run failed!')
+        print(e)
+        raise
+    # or 
+    #  except Exception as e:
+    #         # save the screenshot of the test file which has failed
+    #         obj_lib.save_screenshot(browser)
+    #         pytest.fail(e)
+    #         print('Test 3 failed!')
 
     finally:
         #Close browser
