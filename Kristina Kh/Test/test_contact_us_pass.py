@@ -43,3 +43,5 @@ def test_2():
 
         #Close browser
         obj_lib.close_browser(browser)       
+
+#Nel, add raise or pytest.fail(e) in except block for raising eception in cmd

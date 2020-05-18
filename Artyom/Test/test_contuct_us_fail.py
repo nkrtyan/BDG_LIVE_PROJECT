@@ -41,6 +41,6 @@ def test_3():
     finally:
         obj_lib.close_browser(browser)
 
-
+#Nel, add pytest.fail(e) in except block to see exception in cmd
 
 
