@@ -53,4 +53,3 @@ def test_4():
             # close the browser
             obj_lib.close_browser(browser)
             
-#Nel, correct

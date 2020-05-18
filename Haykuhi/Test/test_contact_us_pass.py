@@ -72,10 +72,8 @@ def test_2():
             pytest.fail(e)
             print('Test 2 failed!')
             
-                
         finally:
             # close the browser
             obj_lib.close_browser(browser)        
 
 
-  #Nel, correct

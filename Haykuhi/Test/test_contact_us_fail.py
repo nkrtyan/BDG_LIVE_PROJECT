@@ -59,7 +59,7 @@ def test_3():
             browser.find_element(*obj_contact_us.send_button).click()
 
             # validate that error message has appeared
-            error_message=obj_lib.get_data(key='contact_us_success_message') # I have put the success messsage so that the test fails, in case of error message the test passes
+            error_message=obj_lib.get_data(key='contact_us_error_message') 
             assert error_message in browser.page_source
             print("Test 3 passed!")
 
@@ -73,4 +73,4 @@ def test_3():
             # close the browser
             obj_lib.close_browser(browser)   
 
-#Nel, you test should be passed in case if it find error message, its negative test case         
+    

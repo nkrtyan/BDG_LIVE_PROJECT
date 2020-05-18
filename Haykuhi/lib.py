@@ -73,7 +73,7 @@ class LIB:
         except:
             print('The elements are not located!')
     
-    # data parsing from the data.json file
+    # data parsing from data.json file
     def get_data(self, key):
         try:
             with open('data.json') as f:
