@@ -29,7 +29,7 @@ def test_2():
 
 # Click on contact us btn fill all fields send message
         obj_homepage.click_on_contact_us(browser)
-        obj_contact_us.choose_subject_heading(browser)  # have a question for this part ?
+        obj_contact_us.choose_subject_heading(browser)
         obj_contact_us.input_email()
         obj_contact_us.input_order_reference()
         obj_contact_us.input_message()
@@ -49,7 +49,6 @@ def test_2():
         # print("test_2: FAIL")
 
 # Close browser
-
     finally:
         # time.sleep(10)
         obj_lib.close_browser(browser)

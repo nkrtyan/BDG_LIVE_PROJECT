@@ -20,7 +20,7 @@ class Contact_us:
         self.browser = browser
 
 # Choosing Subject Heading
-    def choose_subject_heading(self, browser): # 2 questions how can i see my errors & why use browser
+    def choose_subject_heading(self, browser): # why use browser to understan browser
 
         try:
             Lib.wait_for_element(self, browser, self.subject_heading_id)

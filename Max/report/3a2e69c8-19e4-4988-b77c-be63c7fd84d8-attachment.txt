@@ -1,0 +1,4 @@
+Cannot open browser:(open_browser)
+Cannot load the page:(page_load)
+Cannot save screenshot:(save_screenshot)
+Cannot close browser:(close_browser)
