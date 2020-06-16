@@ -1,2 +1,0 @@
-Cannot wait for element:(wait_for_element)
-test_3: PASS

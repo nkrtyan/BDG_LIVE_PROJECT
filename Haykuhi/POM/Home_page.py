@@ -9,7 +9,7 @@ from lib import LIB
 
 class Home:
 
-    # Home page locators
+    # page locators
     contact_us      =(By.ID, 'contact-link')
     search_field    =(By.ID, 'search_query_top')
     sign_in         =(By.CSS_SELECTOR, 'a[title="Log in to your customer account"]')
@@ -21,8 +21,6 @@ class Home:
     product_prices  =(By.XPATH, '//span[contains(@class, "price product-price")]')
    
 
-
-  
     # page constructor
     def __init__(self, browser):
         self.browser=browser

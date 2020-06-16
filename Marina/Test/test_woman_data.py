@@ -44,11 +44,7 @@ def test_4():
         obj_lib.close_browser(browser)
 
 
-
-    
-    
-    obj_lib.close_browser(browser)
-    #obj_lib.move_to_elements(browser,elements)
+#Nel, correct, very good
 
 
 

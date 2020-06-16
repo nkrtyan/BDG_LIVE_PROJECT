@@ -12,7 +12,7 @@ Scenario steps
 
 '''
 
-def test_1():
+def test_4():
     try:
     
     # Get data for sing in form config.json 
@@ -37,7 +37,6 @@ def test_1():
         obj_lib.wait_for_element(browser, obj_sing_in.email_id)
         browser.find_element(*obj_sing_in.email_id).send_keys(email_address)
         browser.find_element(*obj_sing_in.password_id).send_keys(password)
-        time.sleep(10)
         browser.find_element(*obj_sing_in.submit_btn_id).click()
 
     # Verify that i sign in successfully
@@ -47,11 +46,13 @@ def test_1():
         print("TEST_1: PASS")
 
     except Exception as e:
-        print(e)
         obj_lib.save_screenshot(browser)
-        print("TEST_1: FAIL")
+        print(e)
+        raise
 
     finally:
     # Close the browser
-        time.sleep(10)
         obj_lib.close_browser(browser)
+
+#Nel, dont use time.sleep    
+# use raise part in exception block as descied yesterday    

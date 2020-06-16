@@ -53,3 +53,5 @@ def test_2():
 
     finally:
         obj.close_browser(browser)
+
+#Nel, very good, need to keep negative test case as well        

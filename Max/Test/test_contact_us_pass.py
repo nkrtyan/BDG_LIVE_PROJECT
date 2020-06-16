@@ -4,8 +4,6 @@ from POM.Contact_us import Contact_us
 import pytest
 # import time
 
-
-
 '''
 1. Go to URL
 2. Click to Contact US button
@@ -52,3 +50,4 @@ def test_2():
     finally:
         # time.sleep(10)
         obj_lib.close_browser(browser)
+#Nel, correct        

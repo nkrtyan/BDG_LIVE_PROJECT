@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-from Lib import LIB
+from Lib import Lib
 
 
 class Contact_Us:
@@ -20,8 +20,8 @@ class Contact_Us:
 
     #choose subject heading
     def choose_subject_heading(self, browser):
-        LIB.wait_for_element(self, browser, self.subject_heading)
-        select_text = LIB.get_data(self, key = 'subject_heading')
+        Lib.wait_for_element(self, browser, self.subject_heading)
+        select_text = Lib.get_data(self, key = 'subject_heading')
         element = self.browser.find_element(*self.subject_heading)
         element.click()
         select = Select(element)
@@ -29,18 +29,18 @@ class Contact_Us:
         
     #input email address
     def input_email_address(self):
-        email_value = LIB.get_data(self, key = 'valid_email')
+        email_value = Lib.get_data(self, key = 'valid_email')
         self.browser.find_element(*self.email_address).send_keys(email_value)
 
 
     #input order reference
     def input_order_referenc(self):
-        reference_value = LIB.get_data(self, key = 'references')
+        reference_value = Lib.get_data(self, key = 'references')
         self.browser.find_element(*self.order_reference).send_keys(reference_value)
 
     #input message
     def input_message(self):
-        message = LIB.get_data(self, 'contuct_us_input_message')
+        message = Lib.get_data(self, 'contuct_us_input_message')
         self.browser.find_element(*self.input_message_text).send_keys(message)
 
     #click Send button
